@@ -1,18 +1,39 @@
-import styled from 'styled-components';
-import { slideDownKeyframe } from '../common/CSSAnimations';
+import styled from 'styled-components'
+import { slideDownKeyframe } from '../common/CSSAnimations'
 
 export const HomeWrapper = styled.section`
   padding-bottom: 100px;
   padding-top: 125px;
-`;
+
+  .svg-rect {
+    width: 40%;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: -1;
+  }
+
+  @media ${props => props.theme.media.tablet} {
+    padding-top: 80px;
+
+    .svg-rect {
+      top: 0;
+      opacity: 0.8;
+    }
+  }
+`
 
 export const Intro = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  height: calc(80vh - 100px);
+
   .home__text {
     animation: ${slideDownKeyframe} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s forwards;
+
+    z-index: 1;
 
     @media ${props => props.theme.media.tablet} {
       display: flex;
@@ -35,4 +56,14 @@ export const Intro = styled.section`
   .adjust {
     font-size: 1.06rem;
   }
-`;
+
+  @media ${props => props.theme.media.tablet} {
+    justify-content: space-between;
+    flex-direction: column;
+
+    h1 {
+      margin: 6px 0;
+      line-height: 100%;
+    }
+  }
+`

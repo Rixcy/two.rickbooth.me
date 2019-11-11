@@ -1,11 +1,11 @@
-import { css } from 'styled-components';
+import { css } from 'styled-components'
 
 export const sizes = {
   mobile: '480px',
   tablet: '768px',
   fablet: '1000px',
   desktop: '1200px',
-};
+}
 
 const themeCommon = {
   shadow: '0px 10px 10px rgba(0, 0, 0, 0.2)',
@@ -28,7 +28,7 @@ const themeCommon = {
     minMobile: `(min-width: ${sizes.mobile})`,
     minTablet: `(min-width: ${sizes.tablet})`,
   },
-};
+}
 
 export const themelight = {
   dark: false,
@@ -39,4 +39,4 @@ export const themelight = {
   primaryBlack: '#383838',
   primaryText: '#383838',
   ...themeCommon,
-};
+}

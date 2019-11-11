@@ -1,9 +1,11 @@
-import React from 'react';
-import { HomeWrapper, Intro } from './Home.style';
+import React from 'react'
+import { HomeWrapper, Intro } from './Home.style'
+import svgRect from '../../static/rect.svg'
 
 const Home = () => {
   return (
     <HomeWrapper id="home">
+      <img className="svg-rect" src={svgRect} alt=""></img>
       <Intro>
         <div className="home__text">
           <p>Hello, i'm</p>
@@ -12,7 +14,7 @@ const Home = () => {
         </div>
       </Intro>
     </HomeWrapper>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
