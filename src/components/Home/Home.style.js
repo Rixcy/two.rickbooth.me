@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { slideDownKeyframe } from 'src/components/css-animations';
+import { slideDownKeyframe } from '../common/CSSAnimations';
 
 export const HomeWrapper = styled.section`
   padding-bottom: 100px;

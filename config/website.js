@@ -4,11 +4,11 @@ const meta = {
   siteTitleAlt: 'rickboothdotme',
   siteShortName: 'rickboothdotme',
   siteUrl: 'https://new.rickbooth.me',
-};
+}
 
 const social = {
-  siteLogo: `src/static/logo.svg`,
-};
+  siteLogo: `src/static/logo.png`,
+}
 
 const website = {
   ...meta,
@@ -17,6 +17,6 @@ const website = {
   // Manifest
   themeColor: '#6D83F2',
   backgroundColor: '#6D83F2',
-};
+}
 
-module.exports = website;
+module.exports = website
