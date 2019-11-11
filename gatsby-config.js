@@ -1,4 +1,4 @@
-const config = require('./config/website')
+const config = require('./config/website');
 
 module.exports = {
   siteMetadata: {
@@ -43,4 +43,4 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
   ],
-}
+};

@@ -1,5 +1,5 @@
-import React from 'react'
-import { HomeWrapper, Intro } from './Home.style'
+import React from 'react';
+import { HomeWrapper, Intro } from './Home.style';
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
         </div>
       </Intro>
     </HomeWrapper>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
