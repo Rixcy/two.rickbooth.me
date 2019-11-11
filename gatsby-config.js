@@ -5,6 +5,7 @@ module.exports = {
     title: config.siteTitle,
     description: config.siteDescription,
     siteLogo: config.siteLogo,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -40,5 +41,6 @@ module.exports = {
         head: true,
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 }
