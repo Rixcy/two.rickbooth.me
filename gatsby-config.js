@@ -1,8 +1,10 @@
+const config = require('./config/website')
+
 module.exports = {
   siteMetadata: {
-    title: `rickbooth.me`,
-    description: `My personal website built using Gatsby.`,
-    author: `@rixcy`,
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteLogo: config.siteLogo,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,18 +20,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `rickboothdotme`,
-        short_name: `rickboothdotme`,
+        name: config.siteTitleAlt,
+        short_name: config.siteShortName,
         start_url: `/`,
-        background_color: `#6D83F2`,
-        theme_color: `#6D83F2`,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
         display: `standalone`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: config.siteLogo, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: config.googleAnalyticsID,
+        head: true,
+      },
+    },
   ],
 }
