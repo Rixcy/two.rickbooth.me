@@ -7,7 +7,7 @@ const meta = {
 }
 
 const social = {
-  siteLogo: `src/static/logo.png`,
+  siteLogo: `src/static/logo-colour.png`,
 }
 
 const website = {
@@ -15,8 +15,8 @@ const website = {
   ...social,
   googleAnalyticsID: 'UA-92232438-2',
   // Manifest
-  themeColor: '#6D83F2',
-  backgroundColor: '#6D83F2',
+  themeColor: '#d8344e',
+  backgroundColor: '#d8344e',
 }
 
 module.exports = website

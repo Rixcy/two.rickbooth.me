@@ -30,13 +30,25 @@ const themeCommon = {
   },
 }
 
-export const themelight = {
+export const themeLight = {
   dark: false,
   bg: '#F8F8F8',
-  primaryColor: '#6D83F2',
+  primaryColor: '#d8344e',
   secondaryColor: '#F8F8F8',
-  accentColor: '#C7D0FF',
+  accentColor: '#ffc7d0',
   primaryBlack: '#383838',
   primaryText: '#383838',
+  ...themeCommon,
+}
+
+export const themeDark = {
+  dark: true,
+  bg: '#191919',
+  primaryColor: '#d8344e',
+  secondaryColor: '#232323',
+  accentColor: '#303030',
+  primaryBlack: '#F8F8F8',
+  elevation0: '#191919',
+  primaryText: '#F8F8F8',
   ...themeCommon,
 }
