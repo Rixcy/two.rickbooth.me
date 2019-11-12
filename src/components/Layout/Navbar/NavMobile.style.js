@@ -14,6 +14,15 @@ export const MobileMenuWrapper = styled.nav`
     bottom: 15px;
     right: 40px;
   }
+
+  a:focus,
+  button:focus {
+    outline: 2px solid ${props => props.theme.accentColor};
+  }
+  a:hover,
+  button:hover {
+    outline: 2px solid ${props => props.theme.accentColor};
+  }
 `
 
 export const FloatingButton = styled.button`
@@ -27,8 +36,6 @@ export const FloatingButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: none;
-  cursor: pointer;
 `
 
 export const NavItemMobile = styled.li`
@@ -65,28 +72,6 @@ export const NavItemMobile = styled.li`
   }
 `
 
-// export const CircleIconButtonCSS = css`
-//   border-radius: 50%;
-//   background: ${props => props.theme.gradient};
-//   color: white;
-//   display: block;
-//   width: 60px;
-//   height: 60px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   box-shadow: 1px 3px 13px 0px rgba(0,0,0,0.1);
-//   cursor: pointer;
-
-//   &:hover {
-//     color: white !important;
-//     transform: scale(1.1);
-//     transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-//     border: 1px solid ${props => props.theme.accentColor};
-//   }
-// `
-
-// EXPERIMANTAL BOTTOM NAV
 export const NavItemsBottomNav = styled.ul`
   opacity: 0;
   pointer-events: none;

@@ -2,6 +2,7 @@ import React from 'react'
 import logo from 'src/static/logo-colour.png'
 
 import Link from 'gatsby-link'
+import { Link as SLink } from 'react-scroll'
 
 import { NavItems, NavItem } from './Navbar.style'
 
@@ -12,9 +13,9 @@ import ToggleSwitch from 'src/components/common/ToggleSwitch'
 const NavDesktop = () => {
   return (
     <>
-      <Link className="logo" to="/">
+      <SLink className="logo" smooth offset={-100} hashSpy={true} to="home">
         <img src={logo} alt="Rick Booth" />
-      </Link>
+      </SLink>
 
       <nav>
         <NavItems>

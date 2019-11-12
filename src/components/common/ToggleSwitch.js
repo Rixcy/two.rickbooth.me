@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import ThemeToggleContext from '../Layout/ThemeToggleContext'
 
@@ -98,22 +98,24 @@ const SwitchWrapper = styled.div`
 `
 
 const ToggleSwitch = () => {
-  const { toggleTheme, theme } = useContext(ThemeToggleContext)
-
   return (
-    <SwitchWrapper>
-      <div className="button r" id="button-1">
-        <input
-          className="checkbox"
-          aria-label="toggle theme"
-          type="checkbox"
-          onChange={toggleTheme}
-          checked={theme === 'dark' ? true : false}
-        />
-        <div className="knobs"></div>
-        <div className="layer"></div>
-      </div>
-    </SwitchWrapper>
+    <ThemeToggleContext.Consumer>
+      {({ theme, toggleTheme }) => (
+        <SwitchWrapper>
+          <div className="button r" id="button-1">
+            <input
+              className="checkbox"
+              aria-label="toggle theme"
+              type="checkbox"
+              onChange={toggleTheme}
+              checked={theme === 'dark' ? true : false}
+            />
+            <div className="knobs"></div>
+            <div className="layer"></div>
+          </div>
+        </SwitchWrapper>
+      )}
+    </ThemeToggleContext.Consumer>
   )
 }
 

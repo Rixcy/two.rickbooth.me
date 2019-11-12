@@ -13,6 +13,7 @@
     "gatsby": "^2.17.6",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-google-analytics": "^2.1.25",
+    "gatsby-plugin-layout": "^1.1.14",
     "gatsby-plugin-manifest": "^2.2.25",
     "gatsby-plugin-offline": "^3.0.17",
     "gatsby-plugin-react-helmet": "^3.1.13",
@@ -30,6 +31,8 @@
     "react-fontawesome": "^1.7.1",
     "react-grid-system": "^6.0.3",
     "react-helmet": "^5.2.1",
+    "react-scroll": "^1.7.14",
+    "react-scroll-parallax": "^2.2.0",
     "styled-components": "^4.4.1",
     "typeface-montserrat": "^0.0.75",
     "typeface-open-sans": "^0.0.75"

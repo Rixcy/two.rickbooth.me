@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    /* overflow hidden for SmallProject's 100vw width div */
     overflow-x: hidden;
     background-color: ${p => p.theme.bg};
     color: ${p => p.theme.primaryText};
@@ -23,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${p => p.theme.primaryColor};
     text-decoration: none;
   }
-
   a:hover {
     color: ${p => p.theme.primaryText};
   }
@@ -49,9 +49,19 @@ const GlobalStyle = createGlobalStyle`
     line-height: 150%;
   }
 
+  .invalid {
+    color: #e81b1b !important;
+    box-shadow: 0 0 0px 1px #e81b1b;
+  }
+
+  .active {
+    color: #383838;
+  }
+
   hr {
     border: 1px solid ${p => p.theme.accentColor};
     margin: 30px 0;
   }
 `
+
 export default GlobalStyle

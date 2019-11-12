@@ -15,7 +15,15 @@ const DarkModeButton = () => {
 
   return (
     <>
-      <FloatingButton as="button" onClick={toggleTheme} aria-label="Toggle Dark Mode">
+      <input
+        aria-label="toggle theme"
+        type="checkbox"
+        className="checkbox"
+        id="darkmode-input"
+        onChange={toggleTheme}
+        checked={theme === 'dark' ? true : false}
+      />
+      <FloatingButton as="label" role="button" aria-label="Toggle Dark Mode" htmlFor="darkmode-input">
         <FontAwesomeIcon icon={theme === 'light' ? 'moon' : 'sun'} size="2x" />
       </FloatingButton>
     </>

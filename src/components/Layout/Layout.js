@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 import 'normalize.css'
 import { ThemeProvider } from 'styled-components'
@@ -28,7 +29,9 @@ const Layout = ({ children }) => {
           <Navbar />
         </ThemeToggleContext.Provider>
 
-        <Wrapper>{children}</Wrapper>
+        <ParallaxProvider>
+          <Wrapper>{children}</Wrapper>
+        </ParallaxProvider>
       </>
     </ThemeProvider>
   )
