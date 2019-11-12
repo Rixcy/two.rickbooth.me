@@ -9,6 +9,7 @@ import Wrapper from 'src/components/common/Wrapper'
 import GlobalStyle from 'src/styles/GlobalStyle'
 import Navbar from './Navbar/Navbar'
 
+import 'src/components/common/FA'
 import useDarkMode from 'src/hooks/useDarkMode'
 import ThemeToggleContext from './ThemeToggleContext'
 
@@ -26,6 +27,7 @@ const Layout = ({ children }) => {
         <ThemeToggleContext.Provider value={{ theme, toggleTheme, toggleRef }}>
           <Navbar />
         </ThemeToggleContext.Provider>
+
         <Wrapper>{children}</Wrapper>
       </>
     </ThemeProvider>

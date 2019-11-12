@@ -3,6 +3,10 @@ import logo from 'src/static/logo-colour.png'
 
 import Link from 'gatsby-link'
 
+import { NavItems, NavItem } from './Navbar.style'
+
+import NavLinks from './NavLinks'
+
 import ToggleSwitch from 'src/components/common/ToggleSwitch'
 
 const NavDesktop = () => {
@@ -13,7 +17,16 @@ const NavDesktop = () => {
       </Link>
 
       <nav>
-        <ToggleSwitch />
+        <NavItems>
+          <NavLinks NavItem={NavItem} />
+
+          <NavItem>
+            <Link to="/blog">blog</Link>
+          </NavItem>
+          <NavItem>
+            <ToggleSwitch />
+          </NavItem>
+        </NavItems>
       </nav>
     </>
   )

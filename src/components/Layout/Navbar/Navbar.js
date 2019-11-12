@@ -3,6 +3,7 @@ import React from 'react'
 import { NavContent, NavWrapper } from './Navbar.style'
 
 import NavDesktop from './NavDesktop'
+import NavMobile from './NavMobile'
 
 import { Visible } from 'react-grid-system'
 
@@ -16,6 +17,9 @@ const Navbar = () => {
           </Visible>
         </NavContent>
       </NavWrapper>
+      <Visible xs sm>
+        <NavMobile />
+      </Visible>
     </header>
   )
 }
