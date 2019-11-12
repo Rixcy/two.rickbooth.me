@@ -6,7 +6,7 @@ import Link from 'gatsby-link'
 const NavDesktop = () => {
   return (
     <>
-      <Link className="logo" smooth offset={-100} hashSpy={true} to="home">
+      <Link className="logo" to="/">
         <img src={logo} alt="Rick Booth" />
       </Link>
     </>

@@ -11,7 +11,7 @@ const themeCommon = {
   shadow: '0px 10px 10px rgba(0, 0, 0, 0.2)',
   shadowSmall: '0px 5px 10px rgba(0, 0, 0, 0.05)',
   fontFamily: '"Montserrat", sans-serif',
-  secondaryFontFamily: '"Karla", sans-serif',
+  secondaryFontFamily: '"Open Sans", sans-serif',
   spacing: {
     sectionBottom: 'margin-bottom: 100px',
     sectionTop: 'margin-top: 100px',
