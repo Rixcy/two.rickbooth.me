@@ -15,13 +15,18 @@ export const MobileMenuWrapper = styled.nav`
     right: 40px;
   }
 
+  button,
+  a {
+    outline: none;
+  }
+
   a:focus,
   button:focus {
-    outline: 2px solid ${props => props.theme.accentColor};
+    background: ${props => props.theme.gradient2};
   }
   a:hover,
   button:hover {
-    outline: 2px solid ${props => props.theme.accentColor};
+    background: ${props => props.theme.gradient2};
   }
 `
 
@@ -36,6 +41,10 @@ export const FloatingButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    background: ${props => props.theme.gradient2};
+  }
 `
 
 export const NavItemMobile = styled.li`

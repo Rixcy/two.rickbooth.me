@@ -15,15 +15,7 @@ const DarkModeButton = () => {
 
   return (
     <>
-      <input
-        aria-label="toggle theme"
-        type="checkbox"
-        className="checkbox"
-        id="darkmode-input"
-        onChange={toggleTheme}
-        checked={theme === 'dark' ? true : false}
-      />
-      <FloatingButton as="label" role="button" aria-label="Toggle Dark Mode" htmlFor="darkmode-input">
+      <FloatingButton as="button" type="button" onClick={toggleTheme}>
         <FontAwesomeIcon icon={theme === 'light' ? 'moon' : 'sun'} size="2x" />
       </FloatingButton>
     </>
@@ -47,9 +39,9 @@ const NavbarMobile = () => {
         <NavItemsBottomNav isOpen={isMenuOpen}>
           <NavLinks NavItem={NavItem} />
 
-          <NavItem>
+          {/* <NavItem>
             <Link to="/blog">blog</Link>
-          </NavItem>
+          </NavItem> */}
           <NavItem style={{ width: 'auto' }}>
             <DarkModeButton />
           </NavItem>

@@ -63,6 +63,10 @@ export const ContactForm = styled.form`
 
   box-shadow: ${props => props.theme.shadowSmall};
 
+  label {
+    user-select: none;
+  }
+
   label span {
     width: 100%;
     font-size: 0.85em;

@@ -21,9 +21,9 @@ const NavDesktop = () => {
         <NavItems>
           <NavLinks NavItem={NavItem} />
 
-          <NavItem>
+          {/* <NavItem>
             <Link to="/blog">blog</Link>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
             <ToggleSwitch />
           </NavItem>
