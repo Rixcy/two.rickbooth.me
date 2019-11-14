@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${p => p.theme.primaryColor};
     text-decoration: none;
   }
+
   a:hover {
     color: ${p => p.theme.primaryText};
   }
@@ -38,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     margin: 0;
     line-height: 150%;
-    font-family: ${p => p.theme.secondaryFontFamily};
+    font-family: ${p => p.theme.fontFamily};
     color: ${p => p.theme.primaryText};
   }
 

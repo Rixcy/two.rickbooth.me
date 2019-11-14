@@ -28,8 +28,8 @@ const themeCommon = {
     minMobile: `(min-width: ${sizes.mobile})`,
     minTablet: `(min-width: ${sizes.tablet})`,
   },
-  gradient: 'linear-gradient(135deg, #f06a6b 0%, #d8344e 99%)',
-  gradient2: 'linear-gradient(100deg, #f06a6b 0%, #d8344e 130%',
+  gradient: 'linear-gradient(135deg, #f06a6b 0%, #A51F34 99%)',
+  gradient2: 'linear-gradient(100deg, #f06a6b 0%, #A51F34 130%)',
 }
 
 export const themeLight = {

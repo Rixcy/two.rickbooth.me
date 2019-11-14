@@ -5,7 +5,7 @@ import SEO from 'src/components/seo'
 const Blog = () => {
   return (
     <>
-      <SEO title="Blog | rickboothdotme" />
+      <SEO title="Blog" />
       <span style={{ marginTop: '80px' }}>Hello</span>
     </>
   )

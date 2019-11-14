@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
@@ -17,6 +18,15 @@ import ThemeToggleContext from './ThemeToggleContext'
 import { setConfiguration } from 'react-grid-system'
 setConfiguration({ breakpoints: [576, 769, 992, 1200] })
 
+const RootWrapper = styled(Wrapper)`
+  margin-bottom: 50px;
+  min-height: calc(100vh - 125px);
+
+  @media ${props => props.theme.media.tablet} {
+    margin-top: 50px;
+  }
+`
+
 const Layout = ({ children }) => {
   const [theme, toggleTheme, toggleRef] = useDarkMode()
 
@@ -30,7 +40,7 @@ const Layout = ({ children }) => {
         </ThemeToggleContext.Provider>
 
         <ParallaxProvider>
-          <Wrapper>{children}</Wrapper>
+          <RootWrapper>{children}</RootWrapper>
         </ParallaxProvider>
       </>
     </ThemeProvider>

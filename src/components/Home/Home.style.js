@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { slideDownKeyframe } from '../common/CSSAnimations'
 
 export const HomeWrapper = styled.section`
-  padding-bottom: 100px;
+  padding-bottom: 20px;
   padding-top: 125px;
 
   .svg-rect {
@@ -27,8 +27,9 @@ export const Intro = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 100px 0;
 
-  height: calc(80vh - 100px);
+  height: auto;
 
   .home__text {
     animation: ${slideDownKeyframe} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s forwards;

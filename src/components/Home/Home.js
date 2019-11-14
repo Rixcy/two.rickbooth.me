@@ -8,7 +8,6 @@ const Home = () => {
       <img className="svg-rect" src={svgRect} alt=""></img>
       <Intro>
         <div className="home__text">
-          <p>Hello, i'm</p>
           <h1>RICK BOOTH</h1>
           <p className="adjust">FRONT-END WEB DEVELOPER</p>
         </div>

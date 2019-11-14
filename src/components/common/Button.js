@@ -6,11 +6,11 @@ const common = css`
   border: none;
   cursor: pointer;
   transition: 0.2s;
+  outline: none;
 
   &:hover {
     color: #f8f8f8;
     background: ${props => props.theme.gradient2};
-    transform: scale(1.05);
     transition: 0.2s;
   }
 `
