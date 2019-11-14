@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import PageHeader from '../common/PageHeader'
 
+import ReCAPTCHA from 'react-google-recaptcha'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from 'src/components/common/Button'
 
 import { ContactWrapper, RightContent, ContactBox, ContactForm } from './Contact.style'
+
+const recaptchaRef = React.createRef()
 
 function Contact() {
   const [formData, setformData] = useState({ _replyto: '', name: '', message: '' })
@@ -45,6 +49,7 @@ function Contact() {
     const { name, value } = e.target
     validateForm(name, value)
     setformData({ ...formData, [name]: value })
+    recaptchaRef.current.execute()
   }
 
   return (
@@ -65,10 +70,13 @@ function Contact() {
           }}
           action="https://getform.io/f/c5e93710-23a2-4c1d-991f-833e7e58195f"
           method="POST"
-          className="ajaxForm"
-          enctype="multipart/form-data"
-          target="_blank"
         >
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size="invisible"
+            badge="inline"
+            sitekey="6LeSzcIUAAAAAAhk0fSFV8JYaNZiIeKSxrLUUoiT"
+          />
           <label className="label__email">
             <span>Email</span>
             <input
