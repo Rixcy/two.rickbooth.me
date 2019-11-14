@@ -8,8 +8,8 @@ import { AboutWrapper, AboutInfo } from './About.style'
 const About = () => {
   return (
     <AboutWrapper id="about">
+      <SkewBg />
       <AboutInfo>
-        <SkewBg />
         <p>
           Hi, I'm Rick Booth. I'm a passionate self-taught front-end web developer with full stack experience. As a
           self-driven, forward-thinking individual, I constantly strive to embrace new techniques and technologies,

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from 'src/components/common/Button'
 
 import { ContactWrapper, RightContent, ContactBox, ContactForm } from './Contact.style'
+import Flex from '../common/Flex'
 
 const recaptchaRef = React.createRef()
 
@@ -71,49 +72,54 @@ function Contact() {
           action="https://getform.io/f/c5e93710-23a2-4c1d-991f-833e7e58195f"
           method="POST"
         >
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            size="invisible"
-            badge="inline"
-            sitekey="6LeSzcIUAAAAAAhk0fSFV8JYaNZiIeKSxrLUUoiT"
-          />
-          <label className="label__email">
-            <span>Email</span>
-            <input
-              className={errors._replyto && 'invalid'}
-              onChange={handleInput}
-              value={formData.email}
-              id="email"
-              name="_replyto"
-              required
-              placeholder="example@gmail.com"
-            />
-          </label>
-          <label className="label__name">
-            <span>Name</span>
-            <input
-              className={errors.name && 'invalid'}
-              onChange={handleInput}
-              value={formData.name}
-              name="name"
-              type="text"
-              required
-            />
-          </label>
-          <label className="label__message">
-            <span>Message</span>
-            <textarea
-              className={errors.message && 'invalid'}
-              onChange={handleInput}
-              value={formData.message}
-              name="message"
-              required
-            />
-          </label>
+          <Flex className="group__name-email">
+            <label className="label__name">
+              <span>Name</span>
+              <input
+                className={errors.name && 'invalid'}
+                onChange={handleInput}
+                value={formData.name}
+                name="name"
+                type="text"
+                required
+              />
+            </label>
+            <label className="label__email">
+              <span>Email</span>
+              <input
+                className={errors._replyto && 'invalid'}
+                onChange={handleInput}
+                value={formData.email}
+                id="email"
+                name="_replyto"
+                required
+              />
+            </label>
+          </Flex>
+          <Flex>
+            <label className="label__message">
+              <span>Message</span>
+              <textarea
+                className={errors.message && 'invalid'}
+                onChange={handleInput}
+                value={formData.message}
+                name="message"
+                required
+              />
+            </label>
+          </Flex>
+          <Flex>
+            <p className="grecaptcha__text">
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy"> Privacy Policy</a> and
+              <a href="https://policies.google.com/terms"> Terms of Service</a> apply.
+            </p>
+            <Button className="submit__btn" as="button" type="submit" value="send">
+              <FontAwesomeIcon icon="paper-plane" /> Submit
+            </Button>
 
-          <Button className="submit__btn" as="button" type="submit" value="send">
-            <FontAwesomeIcon icon="paper-plane" /> Submit
-          </Button>
+            <ReCAPTCHA ref={recaptchaRef} size="invisible" sitekey="6LeSzcIUAAAAAAhk0fSFV8JYaNZiIeKSxrLUUoiT" />
+          </Flex>
         </ContactForm>
 
         <RightContent>

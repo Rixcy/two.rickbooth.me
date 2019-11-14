@@ -7,6 +7,9 @@ const PageHeader = styled.h2`
   color: ${p => (p.theme.dark ? p.theme.primaryText : p.theme.primaryColor)};
   text-align: center;
   letter-spacing: 1px;
+  @media ${props => props.theme.media.tablet} {
+    margin: 0;
+  }
 `
 
 export default PageHeader

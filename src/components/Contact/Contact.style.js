@@ -5,6 +5,10 @@ export const ContactWrapper = styled.section`
   margin-bottom: 200px;
   height: 100%;
   position: relative;
+  @media ${props => props.theme.media.tablet} {
+    margin-top: 100px;
+    margin-bottom: 80px;
+  }
 `
 
 export const ContactBox = styled.div`
@@ -59,39 +63,27 @@ export const ContactForm = styled.form`
 
   box-shadow: ${props => props.theme.shadowSmall};
 
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    'email name'
-    'textarea textarea'
-    '. button';
-
   label span {
+    width: 100%;
     font-size: 0.85em;
     color: ${p => (p.theme.dark ? '#fff' : '#252525')};
   }
-  .label__email {
-    grid-area: email;
-  }
+
   .label__name {
-    grid-area: name;
-  }
-  .label__message {
-    grid-area: textarea;
-  }
-  .submit__btn {
-    justify-self: end;
-    width: fit-content;
-    grid-area: button;
+    margin-right: 10px;
+    flex: 1;
   }
 
-  @media ${props => props.theme.media.tablet} {
-    grid-template-areas:
-      'email email'
-      'name name'
-      'textarea textarea'
-      '. button';
+  .label__email {
+    flex: 1;
+  }
+
+  .label__message {
+    flex: 1;
+  }
+
+  .submit__btn {
+    width: fit-content;
   }
 
   input,
@@ -112,6 +104,16 @@ export const ContactForm = styled.form`
     resize: none;
   }
 
+  .grecaptcha-badge {
+    display: none !important;
+  }
+
+  .grecaptcha__text {
+    margin-bottom: 15px;
+    font-size: 12px;
+    width: 100%:
+  }
+
   @media ${props => props.theme.media.fablet} {
     input,
     textarea {
@@ -124,5 +126,14 @@ export const ContactForm = styled.form`
     width: 100%;
     top: 0px;
     right: 0px;
+  }
+
+  @media ${props => props.theme.media.mobile} {
+    .group__name-email {
+      flex-direction: column;
+    }
+    .label__name {
+      margin-right: 0;
+    }
   }
 `
