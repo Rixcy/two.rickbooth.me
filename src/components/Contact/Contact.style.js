@@ -115,7 +115,7 @@ export const ContactForm = styled.form`
   .grecaptcha__text {
     margin-bottom: 15px;
     font-size: 12px;
-    width: 100%:
+    width: 100%;
   }
 
   @media ${props => props.theme.media.fablet} {
