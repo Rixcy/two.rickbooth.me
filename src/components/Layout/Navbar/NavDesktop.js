@@ -13,7 +13,7 @@ import ToggleSwitch from 'src/components/common/ToggleSwitch'
 const NavDesktop = () => {
   return (
     <>
-      <SLink className="logo" smooth offset={-100} hashSpy={true} to="home">
+      <SLink className="logo" smooth offset={-100} to="home">
         <img src={logo} alt="Rick Booth" />
       </SLink>
 
