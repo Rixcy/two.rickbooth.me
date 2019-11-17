@@ -1,126 +1,136 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PageHeader from '../common/PageHeader'
+
+import axios from 'axios'
+
+import * as Yup from 'yup'
+
+import { Formik, Field } from 'formik'
 
 import ReCAPTCHA from 'react-google-recaptcha'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from 'src/components/common/Button'
 
-import { ContactWrapper, RightContent, ContactBox, ContactForm } from './Contact.style'
+import {
+  ContactWrapper,
+  RightContent,
+  ContactBox,
+  ContactForm,
+  MessageSent,
+} from './Contact.style'
 import Flex from '../common/Flex'
 
 const recaptchaRef = React.createRef()
+const messageSentRef = React.createRef()
 
-function Contact() {
-  const [formData, setformData] = useState({ _replyto: '', name: '', message: '' })
-  const [errors, setErrors] = useState({ _replyto: '', name: '', message: '' })
+const RecaptchaText = () => (
+  <>
+    <p className="grecaptcha__text">
+      This site is protected by reCAPTCHA and the Google
+      <a href="https://policies.google.com/privacy"> Privacy Policy</a> and
+      <a href="https://policies.google.com/terms"> Terms of Service</a> apply.
+    </p>
+  </>
+)
 
-  let emailregex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-  let nameregex = /^[a-zA-Z\s]*[^\s]$/gim
-  let messageregex = /^[\w\d][^<>/\\&]*$/gim
+const ContactSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  email: Yup.string()
+    .email('Invalid email')
+    .required('Required'),
+  message: Yup.string()
+    .min(5, 'Too Short!')
+    .required('Required'),
+})
 
-  function check(value, field, regex, text) {
-    if (!value) {
-      setErrors({ ...errors, [field]: `Your ${text} is required` })
-      return true
-    } else if (!regex.test(value)) {
-      setErrors({ ...errors, [field]: `Your ${text} is not valid` })
-      return true
-    } else {
-      setErrors({ ...errors, [field]: '' })
-      return false
-    }
-  }
-
-  const validateForm = (name, value) => {
-    switch (name) {
-      case '_replyto':
-        return !check(value, '_replyto', emailregex, 'Email')
-      case 'name':
-        return !check(value, 'name', nameregex, 'Name')
-      case 'message':
-        return !check(value, 'message', messageregex, 'Message')
-      default:
-        break
-    }
-  }
-
-  const handleInput = e => {
-    e.preventDefault()
-    const { name, value } = e.target
-    validateForm(name, value)
-    setformData({ ...formData, [name]: value })
-    recaptchaRef.current.execute()
-  }
-
+const Contact = () => {
   return (
     <ContactWrapper id="contact">
       <PageHeader>Get In Touch</PageHeader>
       <ContactBox>
-        <ContactForm
-          noValidate
-          onSubmit={event => {
-            let isValid = true
-            for (let i in formData) {
-              if (!validateForm(i, formData[i])) {
-                isValid = false
-                break
-              }
-            }
-            !isValid && event.preventDefault()
+        <Formik
+          initialValues={{
+            name: '',
+            email: '',
+            message: '',
           }}
-          action="https://getform.io/f/c5e93710-23a2-4c1d-991f-833e7e58195f"
-          method="POST"
+          validationSchema={ContactSchema}
+          onSubmit={(data, { setSubmitting, resetForm }) => {
+            setSubmitting(true)
+            axios({
+              method: 'post',
+              url: 'https://getform.io/f/c5e93710-23a2-4c1d-991f-833e7e58195f',
+              data: data,
+            })
+              .then(() => {
+                resetForm()
+                messageSentRef.current.style.opacity = '0.7'
+                setTimeout(() => {
+                  messageSentRef.current.style.opacity = '0'
+                }, 2500)
+              })
+              .catch(err => {
+                console.log(err)
+              })
+          }}
         >
-          <Flex className="group__name-email">
-            <label className="label__name">
-              <span>Name</span>
-              <input
-                className={errors.name && 'invalid'}
-                onChange={handleInput}
-                value={formData.name}
-                name="name"
-                type="text"
-                required
+          {({ isSubmitting, handleSubmit, errors, touched }) => (
+            <ContactForm onSubmit={handleSubmit}>
+              <Flex className="group__name-email">
+                <label className="label__name">
+                  <span>Name</span>
+                  <Field
+                    name="name"
+                    type="input"
+                    className={errors.name && touched.name ? 'invalid' : ''}
+                  />
+                </label>
+                <label className="label__email">
+                  <span>Email</span>
+                  <Field
+                    name="email"
+                    type="input"
+                    className={errors.email && touched.email ? 'invalid' : ''}
+                  />
+                </label>
+              </Flex>
+              <Flex>
+                <label className="label__message">
+                  <span>Message</span>
+                  <Field
+                    name="message"
+                    component="textarea"
+                    className={
+                      errors.message && touched.message ? 'invalid' : ''
+                    }
+                  />
+                </label>
+              </Flex>
+              <Flex justify="space-between">
+                <RecaptchaText />
+                <Button
+                  disabled={isSubmitting}
+                  className="submit__btn"
+                  type="submit"
+                >
+                  <FontAwesomeIcon icon="paper-plane" /> Submit
+                </Button>
+                <MessageSent ref={messageSentRef}>
+                  Message sent <FontAwesomeIcon icon="check" />
+                </MessageSent>
+              </Flex>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                size="invisible"
+                sitekey="6LeSzcIUAAAAAAhk0fSFV8JYaNZiIeKSxrLUUoiT"
               />
-            </label>
-            <label className="label__email">
-              <span>Email</span>
-              <input
-                className={errors._replyto && 'invalid'}
-                onChange={handleInput}
-                value={formData.email}
-                id="email"
-                name="_replyto"
-                required
-              />
-            </label>
-          </Flex>
-          <Flex>
-            <label className="label__message">
-              <span>Message</span>
-              <textarea
-                className={errors.message && 'invalid'}
-                onChange={handleInput}
-                value={formData.message}
-                name="message"
-                required
-              />
-            </label>
-          </Flex>
-          <Flex>
-            <p className="grecaptcha__text">
-              This site is protected by reCAPTCHA and the Google
-              <a href="https://policies.google.com/privacy"> Privacy Policy</a> and
-              <a href="https://policies.google.com/terms"> Terms of Service</a> apply.
-            </p>
-            <Button className="submit__btn" as="button" type="submit" value="send">
-              <FontAwesomeIcon icon="paper-plane" /> Submit
-            </Button>
-
-            <ReCAPTCHA ref={recaptchaRef} size="invisible" sitekey="6LeSzcIUAAAAAAhk0fSFV8JYaNZiIeKSxrLUUoiT" />
-          </Flex>
-        </ContactForm>
+            </ContactForm>
+          )}
+        </Formik>
 
         <RightContent>
           <FontAwesomeIcon size={'5x'} icon="envelope" />

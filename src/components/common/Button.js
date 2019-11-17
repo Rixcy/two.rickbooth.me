@@ -6,7 +6,6 @@ const common = css`
   border: none;
   cursor: pointer;
   transition: 0.2s;
-  outline: none;
 
   &:hover {
     color: #f8f8f8;

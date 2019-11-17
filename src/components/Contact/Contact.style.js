@@ -50,7 +50,8 @@ export const RightContent = styled.div`
 `
 
 export const ContactForm = styled.form`
-  border-top: 5px solid ${p => (p.theme.dark ? p.theme.accentColor : p.theme.primaryColor)};
+  border-top: 5px solid
+    ${p => (p.theme.dark ? p.theme.accentColor : p.theme.primaryColor)};
   position: absolute;
   width: 70%;
 
@@ -140,4 +141,11 @@ export const ContactForm = styled.form`
       margin-right: 0;
     }
   }
+`
+
+export const MessageSent = styled.p`
+  opacity: 0;
+  margin-top: 5px;
+  transition: all 0.5s ease-in-out;
+  font-size: 14px;
 `
