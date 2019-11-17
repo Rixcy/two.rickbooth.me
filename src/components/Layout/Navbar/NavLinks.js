@@ -6,7 +6,7 @@ const NavLinks = ({ NavItem }) => {
   const [path, setPath] = useState(null)
   const Links = ['home', 'about me', 'contact']
   useEffect(() => {
-    setPath(window.location.pathname)
+    if (window !== 'undefined') setPath(window.location.pathname)
   }, [window.location.pathname])
   return (
     <>
@@ -17,7 +17,9 @@ const NavLinks = ({ NavItem }) => {
               {link}
             </SLink>
           ) : (
-            <Link to={link === 'home' ? '/' : `/#${link.replace(' ', '-')}`}>{link}</Link>
+            <Link to={link === 'home' ? '/' : `/#${link.replace(' ', '-')}`}>
+              {link}
+            </Link>
           )}
         </NavItem>
       ))}

@@ -6,11 +6,17 @@ const common = css`
   border: none;
   cursor: pointer;
   transition: 0.2s;
+  user-select: none;
 
   &:hover {
     color: #f8f8f8;
     background: ${props => props.theme.gradient2};
     transition: 0.2s;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
   }
 `
 

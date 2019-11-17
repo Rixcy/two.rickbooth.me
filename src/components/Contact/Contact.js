@@ -60,17 +60,17 @@ const Contact = () => {
           }}
           validationSchema={ContactSchema}
           onSubmit={(data, { setSubmitting, resetForm }) => {
-            setSubmitting(true)
-            axios({
+            return axios({
               method: 'post',
               url: 'https://getform.io/f/c5e93710-23a2-4c1d-991f-833e7e58195f',
               data: data,
             })
               .then(() => {
-                resetForm()
                 messageSentRef.current.style.opacity = '0.7'
                 setTimeout(() => {
                   messageSentRef.current.style.opacity = '0'
+                  setSubmitting(false)
+                  resetForm()
                 }, 2500)
               })
               .catch(err => {
