@@ -2,48 +2,27 @@ import React, { useState, useEffect } from 'react'
 import Link from 'gatsby-link'
 import { Link as SLink } from 'react-scroll'
 
-const NavItemsSmoothLinks = ({ NavItem }) => (
-  <>
-    <NavItem>
-      <SLink smooth offset={-70} to="home">
-        home
-      </SLink>
-    </NavItem>
-    <NavItem>
-      <SLink smooth offset={-100} to="about">
-        about me
-      </SLink>
-    </NavItem>
-    <NavItem>
-      <SLink smooth offset={-100} to="contact">
-        contact
-      </SLink>
-    </NavItem>
-  </>
-)
-
-const NavItemsGatsbyLinks = ({ NavItem }) => (
-  <>
-    <NavItem>
-      <Link to="/">home</Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/#about">about me</Link>
-    </NavItem>
-    <NavItem>
-      <Link to="/#contact">contact</Link>
-    </NavItem>
-  </>
-)
-
 const NavLinks = ({ NavItem }) => {
   const [path, setPath] = useState(null)
-
+  const Links = ['home', 'about me', 'contact']
   useEffect(() => {
     setPath(window.location.pathname)
-  }, [])
-
-  return <>{path === '/' ? <NavItemsSmoothLinks NavItem={NavItem} /> : <NavItemsGatsbyLinks NavItem={NavItem} />}</>
+  }, [window.location.pathname])
+  return (
+    <>
+      {Links.map((link, index) => (
+        <NavItem key={index}>
+          {path === '/' ? (
+            <SLink smooth hashSpy={true} to={link.replace(' ', '-')}>
+              {link}
+            </SLink>
+          ) : (
+            <Link to={link === 'home' ? '/' : `/#${link.replace(' ', '-')}`}>{link}</Link>
+          )}
+        </NavItem>
+      ))}
+    </>
+  )
 }
 
 export default NavLinks

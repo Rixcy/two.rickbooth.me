@@ -14,7 +14,7 @@ export const HomeWrapper = styled.section`
   }
 
   @media ${props => props.theme.media.tablet} {
-    padding-top: 80px;
+    padding-top: 0;
 
     .svg-rect {
       top: 0;

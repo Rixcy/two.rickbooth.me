@@ -7,7 +7,7 @@ import { AboutWrapper, AboutInfo } from './About.style'
 
 const About = () => {
   return (
-    <AboutWrapper id="about">
+    <AboutWrapper id="about-me">
       <SkewBg />
       <AboutInfo>
         <p>
