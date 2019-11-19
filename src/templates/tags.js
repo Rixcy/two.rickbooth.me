@@ -1,13 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import SEO from 'src/components/seo'
 import BlogLayout from 'src/components/Blog/BlogLayout'
 import BlogCard from 'src/components/Blog/BlogCard'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const Header = styled.h1`
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 `
 
 const TagsPage = ({ data, pageContext }) => {
@@ -23,7 +29,15 @@ const TagsPage = ({ data, pageContext }) => {
       <SEO title={tagHeader} />
 
       <BlogLayout>
-        <Header>{tagHeader}</Header>
+        <Header>
+          {tagHeader}
+          {typeof window !== 'undefined' &&
+            window.location.pathname.includes('tags') && (
+              <Link to="blog">
+                <FontAwesomeIcon size="xs" icon={['far', 'times-circle']} />
+              </Link>
+            )}
+        </Header>
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title, date, tags } = node.frontmatter
