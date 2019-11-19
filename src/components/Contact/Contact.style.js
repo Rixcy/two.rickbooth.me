@@ -109,16 +109,6 @@ export const ContactForm = styled.form`
     resize: none;
   }
 
-  .grecaptcha-badge {
-    display: none !important;
-  }
-
-  .grecaptcha__text {
-    margin-bottom: 15px;
-    font-size: 12px;
-    width: 100%;
-  }
-
   @media ${props => props.theme.media.fablet} {
     input,
     textarea {

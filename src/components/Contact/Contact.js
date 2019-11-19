@@ -7,8 +7,6 @@ import * as Yup from 'yup'
 
 import { Formik, Field } from 'formik'
 
-import ReCAPTCHA from 'react-google-recaptcha'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from 'src/components/common/Button'
 
@@ -21,18 +19,7 @@ import {
 } from './Contact.style'
 import Flex from '../common/Flex'
 
-const recaptchaRef = React.createRef()
 const messageSentRef = React.createRef()
-
-const RecaptchaText = () => (
-  <>
-    <p className="grecaptcha__text">
-      This site is protected by reCAPTCHA and the Google
-      <a href="https://policies.google.com/privacy"> Privacy Policy</a> and
-      <a href="https://policies.google.com/terms"> Terms of Service</a> apply.
-    </p>
-  </>
-)
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -60,7 +47,6 @@ const Contact = () => {
           }}
           validationSchema={ContactSchema}
           onSubmit={(data, { setSubmitting, resetForm }) => {
-            recaptchaRef.current.execute()
             return axios({
               method: 'post',
               url: 'https://getform.io/f/c5e93710-23a2-4c1d-991f-833e7e58195f',
@@ -112,7 +98,6 @@ const Contact = () => {
                 </label>
               </Flex>
               <Flex justify="space-between">
-                <RecaptchaText />
                 <Button
                   disabled={isSubmitting}
                   className="submit__btn"
@@ -124,11 +109,6 @@ const Contact = () => {
                   Message sent <FontAwesomeIcon icon="check" />
                 </MessageSent>
               </Flex>
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                size="invisible"
-                sitekey="6LeSzcIUAAAAAAhk0fSFV8JYaNZiIeKSxrLUUoiT"
-              />
             </ContactForm>
           )}
         </Formik>
