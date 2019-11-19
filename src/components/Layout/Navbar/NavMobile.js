@@ -2,7 +2,12 @@ import React, { useState, useContext } from 'react'
 
 import Link from 'gatsby-link'
 
-import { MobileMenuWrapper, FloatingButton, NavItemMobile as NavItem, NavItemsBottomNav } from './NavMobile.style'
+import {
+  MobileMenuWrapper,
+  FloatingButton,
+  NavItemMobile as NavItem,
+  NavItemsBottomNav,
+} from './NavMobile.style'
 
 import NavLinks from './NavLinks'
 
@@ -39,9 +44,9 @@ const NavbarMobile = () => {
         <NavItemsBottomNav isOpen={isMenuOpen}>
           <NavLinks NavItem={NavItem} />
 
-          {/* <NavItem>
+          <NavItem>
             <Link to="/blog">blog</Link>
-          </NavItem> */}
+          </NavItem>
           <NavItem style={{ width: 'auto' }}>
             <DarkModeButton />
           </NavItem>

@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
+import PrismJsStyles from './prismjs.style'
+import blogstyles from './blogcss.style'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -63,6 +65,9 @@ const GlobalStyle = createGlobalStyle`
     border: 1px solid ${p => p.theme.accentColor};
     margin: 30px 0;
   }
+
+  ${blogstyles}
+  ${PrismJsStyles}
 `
 
 export default GlobalStyle

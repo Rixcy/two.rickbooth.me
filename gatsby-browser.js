@@ -1,5 +1,7 @@
 require('typeface-montserrat')
 require('typeface-open-sans')
+require('src/styles/prism-darcula.css')
+require('prismjs/plugins/line-numbers/prism-line-numbers.css')
 
 export const onClientEntry = async () => {
   if (typeof IntersectionObserver === `undefined`) {

@@ -16,6 +16,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'blog',
+        path: `${__dirname}/content/blog/`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -41,12 +48,51 @@ module.exports = {
         head: true,
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/blog/tags/*`],
+      },
+    },
     `gatsby-plugin-root-import`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve('./src/components/Layout/Layout'),
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-embedder`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `remark-autolink`,
+              maintainCase: true,
+              removeAccents: true,
+              offsetY: 100,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+              showCaptions: true,
+            },
+          },
+        ],
       },
     },
   ],

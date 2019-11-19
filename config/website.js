@@ -3,7 +3,7 @@ const meta = {
   siteDescription: 'My personal website built using Gatsby',
   siteTitleAlt: 'rickboothdotme',
   siteShortName: 'rickboothdotme',
-  siteUrl: 'https://new.rickbooth.me',
+  siteUrl: 'https://rickbooth.me',
 }
 
 const social = {

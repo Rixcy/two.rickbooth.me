@@ -55,6 +55,7 @@ export const NavItem = styled.li`
   margin-left: 30px;
   display: inline-block;
   text-align: center;
+  user-select: none;
 
   a {
     /* color: ${p => p.theme.swapIfDark('primaryText', 'primaryColor')}; */

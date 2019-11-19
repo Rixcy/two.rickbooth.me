@@ -7,7 +7,31 @@ import {
   faEnvelope,
   faPaperPlane,
   faCheck,
+  faClock,
+  faCalendarAlt,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faMoon, faSun, faEnvelope, faPaperPlane, faCheck)
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
+
+import {
+  faFacebook,
+  faTwitter,
+  faReddit,
+  faDev,
+} from '@fortawesome/free-brands-svg-icons'
+
+library.add(
+  faMoon,
+  faSun,
+  faEnvelope,
+  faPaperPlane,
+  faCheck,
+  faClock,
+  faCalendarAlt,
+  faFacebook,
+  faTwitter,
+  faReddit,
+  faDev,
+  faTimesCircle
+)
 config.autoAddCss = false

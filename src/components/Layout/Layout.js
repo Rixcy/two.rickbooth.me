@@ -19,6 +19,7 @@ import { setConfiguration } from 'react-grid-system'
 setConfiguration({ breakpoints: [576, 769, 992, 1200] })
 
 const RootWrapper = styled(Wrapper)`
+  padding-top: 100px;
   margin-bottom: 50px;
   min-height: calc(100vh - 125px);
 

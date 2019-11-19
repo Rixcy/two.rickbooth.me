@@ -7,23 +7,28 @@ import { Link as SLink } from 'react-scroll'
 import { NavItems, NavItem } from './Navbar.style'
 
 import NavLinks from './NavLinks'
-
 import ToggleSwitch from 'src/components/common/ToggleSwitch'
 
 const NavDesktop = () => {
   return (
     <>
-      <SLink className="logo" smooth offset={-100} to="home">
-        <img src={logo} alt="Rick Booth" />
-      </SLink>
+      {typeof window !== 'undefined' && window.location.pathname === '/' ? (
+        <SLink className="logo" smooth offset={-100} to="home">
+          <img src={logo} alt="Rick Booth" />
+        </SLink>
+      ) : (
+        <Link className="logo" to="/">
+          <img src={logo} alt="Rick Booth" />
+        </Link>
+      )}
 
       <nav>
         <NavItems>
           <NavLinks NavItem={NavItem} />
 
-          {/* <NavItem>
+          <NavItem>
             <Link to="/blog">blog</Link>
-          </NavItem> */}
+          </NavItem>
           <NavItem>
             <ToggleSwitch />
           </NavItem>
