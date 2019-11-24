@@ -50,7 +50,8 @@ const blogstyles = css`
     }
     h1 {
       font-size: 1.8rem;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+      margin-top: 50px;
     }
     h2,
     h3,
