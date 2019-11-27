@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const AboutWrapper = styled.section`
+  padding-top: 150px;
   @media ${props => props.theme.media.tablet} {
     position: relative;
   }
@@ -15,14 +16,13 @@ export const AboutWrapper = styled.section`
 `
 
 export const AboutInfo = styled.article`
+  padding-top: 80px;
   display: flex;
   position: relative;
   height: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-top: 150px;
   flex-direction: row;
-  padding-top: 80px;
 
   p {
     color: #f8f8f8;
@@ -34,7 +34,7 @@ export const AboutInfo = styled.article`
   }
 
   @media ${props => props.theme.media.tablet} {
-    padding-top: 150px;
+    padding-top: 20px;
     padding-bottom: 50px;
     margin-top: 0;
     text-align: center;
@@ -48,6 +48,7 @@ export const AboutInfo = styled.article`
     p {
       padding-top: 40px;
       margin-right: 0;
+      max-width: 80%;
     }
   }
 `

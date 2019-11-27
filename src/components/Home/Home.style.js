@@ -18,7 +18,6 @@ export const HomeWrapper = styled.section`
 
     .svg-rect {
       top: 0;
-      opacity: 0.8;
     }
   }
 `
@@ -32,7 +31,8 @@ export const Intro = styled.section`
   height: auto;
 
   .home__text {
-    animation: ${slideDownKeyframe} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s forwards;
+    animation: ${slideDownKeyframe} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s
+      forwards;
 
     z-index: 1;
 
@@ -58,6 +58,19 @@ export const Intro = styled.section`
     font-size: 1.06rem;
   }
 
+  .home__CTA {
+    min-width: 100px;
+    max-width: 100px;
+    margin-top: 10px;
+  }
+
+  .home__social {
+    color: ${props => props.theme.primaryColor};
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+  }
+
   @media ${props => props.theme.media.tablet} {
     justify-content: space-between;
     flex-direction: column;
@@ -66,5 +79,7 @@ export const Intro = styled.section`
       margin: 6px 0;
       line-height: 100%;
     }
+
+    margin: 50px 0;
   }
 `

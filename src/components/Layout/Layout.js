@@ -24,7 +24,6 @@ const RootWrapper = styled(Wrapper)`
   min-height: calc(100vh - 125px);
 
   @media ${props => props.theme.media.tablet} {
-    margin-top: 50px;
     padding-bottom: 50px;
   }
 `

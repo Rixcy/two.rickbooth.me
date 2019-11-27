@@ -5,7 +5,8 @@ const SkewBg = styled.div`
   left: 0;
   width: 100%;
   min-height: 400px;
-  background: ${p => (p.theme.dark ? p.theme.secondaryColor : p.theme.gradient)};
+  background: ${p =>
+    p.theme.dark ? p.theme.secondaryColor : p.theme.gradient};
   transform: skewY(-3deg);
   z-index: -1;
   pointer-events: none;
@@ -14,8 +15,8 @@ const SkewBg = styled.div`
     width: unset;
     height: 90%;
     top: 100px;
-    left: -16px;
-    right: -16px;
+    left: -32px;
+    right: -32px;
     bottom: 0;
   }
 `

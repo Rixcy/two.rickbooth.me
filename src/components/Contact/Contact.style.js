@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const ContactWrapper = styled.section`
-  margin-top: 200px;
-  margin-bottom: 200px;
+  padding-top: 200px;
+  padding-bottom: 100px;
   height: 100%;
   position: relative;
   @media ${props => props.theme.media.tablet} {
+    padding-top: 30px;
+    padding-bottom: 0;
     margin-top: 100px;
     margin-bottom: 80px;
   }
@@ -27,6 +29,8 @@ export const ContactBox = styled.div`
     width: 100%;
     padding: 10px;
     margin-top: 50px;
+
+    background: none;
   }
 `
 export const RightContent = styled.div`

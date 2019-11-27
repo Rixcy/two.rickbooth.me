@@ -18,6 +18,8 @@ import {
   faTwitter,
   faReddit,
   faDev,
+  faGithub,
+  faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
 
 library.add(
@@ -32,6 +34,8 @@ library.add(
   faTwitter,
   faReddit,
   faDev,
-  faTimesCircle
+  faTimesCircle,
+  faGithub,
+  faLinkedin
 )
 config.autoAddCss = false

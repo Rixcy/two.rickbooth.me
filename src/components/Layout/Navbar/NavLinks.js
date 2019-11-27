@@ -6,15 +6,12 @@ const NavLinks = ({ NavItem }) => {
   const Links = [
     {
       text: 'home',
-      offset: -70,
     },
     {
       text: 'about me',
-      offset: -310,
     },
     {
       text: 'contact',
-      offset: -200,
     },
   ]
   return (
@@ -22,12 +19,7 @@ const NavLinks = ({ NavItem }) => {
       {Links.map(({ text, offset }, index) => (
         <NavItem key={index}>
           {typeof window !== 'undefined' && window.location.pathname === '/' ? (
-            <SLink
-              smooth
-              hashSpy={true}
-              offset={offset}
-              to={text.replace(' ', '-')}
-            >
+            <SLink smooth offset={offset} to={text.replace(' ', '-')}>
               {text}
             </SLink>
           ) : (
