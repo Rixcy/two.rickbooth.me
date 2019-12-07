@@ -65,6 +65,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `remark-collapse`,
           `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-autolink-headers`,
