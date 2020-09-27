@@ -10,12 +10,13 @@ const About = () => {
     <AboutWrapper id="about-me">
       <SkewBg />
       <AboutInfo>
-        <p>
-          Hi, I'm Rick Booth. I'm a passionate self-taught front-end web developer with full stack experience. As a
-          self-driven, forward-thinking individual, I constantly strive to embrace new techniques and technologies,
-          understanding their impact and weaving them into new and existing projects alike. I particularly like working
-          with JavaScript.
-        </p>
+        <h5 className="prose text-white mr-12">
+          Hi, I'm Rick Booth. I'm a passionate self-taught developer with both
+          front end and full stack experience. Currently working as a head of
+          front-end development at 9xb, I build processes and architectures to
+          introduce modern technologies including TypeScript, NextJS, Serverless
+          deployments and more.
+        </h5>
         <div className="avatar__wrapper">
           <Avatar src="avatar.png" />
         </div>

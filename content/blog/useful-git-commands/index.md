@@ -8,13 +8,13 @@ Remove untracked files
 
 - Dry run:
 
-```sh
+```bash
 git clean -d -n
 ```
 
 - Full run:
 
-```sh
+```bash
 git clean -d -f
 ```
 
