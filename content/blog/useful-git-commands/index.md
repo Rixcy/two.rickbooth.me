@@ -6,15 +6,14 @@ tags: ['Git']
 
 Remove untracked files
 
-- Dry run:
+-   Dry run:
 
 ```bash
 git clean -d -n
 ```
 
-- Full run:
+-   Full run:
 
 ```bash
 git clean -d -f
 ```
-

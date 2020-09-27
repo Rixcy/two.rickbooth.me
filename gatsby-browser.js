@@ -4,7 +4,7 @@ require('src/styles/prism-atom-dark.css')
 require('prismjs/plugins/line-numbers/prism-line-numbers.css')
 
 export const onClientEntry = async () => {
-  if (typeof IntersectionObserver === `undefined`) {
-    await import(`intersection-observer`)
-  }
+    if (typeof IntersectionObserver === `undefined`) {
+        await import(`intersection-observer`)
+    }
 }
