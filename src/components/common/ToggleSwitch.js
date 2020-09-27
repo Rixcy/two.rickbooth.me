@@ -63,16 +63,14 @@ const SwitchWrapper = styled.div`
   #button-1 .knobs:before {
     content: 'DARK';
     position: absolute;
-    top: 4px;
+    top: 5px;
     left: 4px;
-    width: 30px;
-    height: 5px;
     color: #fff;
     font-size: 8px;
     font-weight: bold;
     text-align: center;
-    line-height: 0.5;
-    padding: 9px 4px;
+    line-height: 1;
+    padding: 6px 3px;
     background-color: ${p => p.theme.primaryColor};
     border-radius: 30px;
     transition-delay: 1s;

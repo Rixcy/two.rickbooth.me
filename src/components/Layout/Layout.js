@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { ParallaxProvider } from 'react-scroll-parallax'
+import '../../styles/tailwindinit.css'
 
-import 'normalize.css'
 import { ThemeProvider } from 'styled-components'
 import { themeLight, themeDark } from './theme'
 
