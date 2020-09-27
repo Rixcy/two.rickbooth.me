@@ -8,7 +8,7 @@ export const HomeWrapper = styled.section`
   .svg-rect {
     width: 40%;
     position: absolute;
-    top: 50px;
+    top: 15px;
     right: 0;
     z-index: -1;
   }

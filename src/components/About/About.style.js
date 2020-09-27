@@ -20,8 +20,10 @@ export const AboutInfo = styled.article`
   display: flex;
   position: relative;
   height: 100%;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   flex-direction: row;
 
   p {
