@@ -1,5 +1,5 @@
 {
-  "name": "rickboothdotme",
+  "name": "rickbooth.me",
   "private": true,
   "description": "My personal website built using Gatsby",
   "version": "0.1.0",
@@ -68,9 +68,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rixcy/rickboothdotme-2/"
+    "url": "https://github.com/Rixcy/rickbooth.me/"
   },
   "bugs": {
-    "url": "https://github.com/Rixcy/rickboothdotme-2/issues"
+    "url": "https://github.com/Rixcy/rickbooth.me/issues"
   }
 }
